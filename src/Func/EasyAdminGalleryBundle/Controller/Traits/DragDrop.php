@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PropertyAccess\PropertyAccessor;
 
 trait DragDrop
 {
@@ -20,7 +21,7 @@ trait DragDrop
      */
     public function dragDropAction()
     {
-        $accessor = $this->get('property_accessor');
+        $accessor = new PropertyAccessor();
 
         $entityConfig = $this->entity;
 
@@ -111,9 +112,9 @@ trait DragDrop
      * Add drag and drop form to view parameters
      * {@inheritdoc}
      */
-    protected function render($view, array $parameters = array(), Response $response = null)
+    protected function render(string $view, array $parameters = array(), Response $response = null): Response
     {
-        if (in_array($this->request->query->get('action'), ['list', 'search']))
+        if (in_array($this->request->query->get('action', 'list'), ['list', 'search']))
             $parameters['drag_drop_form'] = $this->getDragDropForm()->createView();
         return parent::render($view, $parameters, $response);
     }

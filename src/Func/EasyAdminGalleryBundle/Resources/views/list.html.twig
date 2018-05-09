@@ -96,6 +96,6 @@
         }, with_context = false) }}
     {% endblock delete_form %}
 
-    {% include '@FuncEasyAdminGallery/includes/drag_drop_form.html.twig' %}
+    {% include '@FuncEasyAdminGallery/includes/drag_drop_form.html.twig' with {_entity_config: _entity_config} %}
 {% endblock main %}
 

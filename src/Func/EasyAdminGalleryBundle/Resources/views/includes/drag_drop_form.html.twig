@@ -1,5 +1,5 @@
 <div class="upload__container">
-    <form method="post" action="?action=dragDrop&entity=Gallery" enctype="multipart/form-data" novalidate class="box">
+    <form method="post" action="?action=dragDrop&entity={{ _entity_config.name }}" enctype="multipart/form-data" novalidate class="box">
         <div class="form__input">
             {{ form_label(drag_drop_form.__files__, "Dosyaları ışık hızılya yüklemek için elini mouse'dan çek.", {
                 'required': false,
