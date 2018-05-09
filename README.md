@@ -1,4 +1,4 @@
-# Func/EasyAdminGalleryBundle
+ # Func/EasyAdminGalleryBundle
 
 Mosaic listing, drag and drop upload and more for EasyAdminBundle
 
@@ -33,6 +33,10 @@ Mosaic listing, drag and drop upload and more for EasyAdminBundle
 #### 1.
 
 set your gallery entitiy controller as `Func\EasyAdminGalleryBundle\Controller\GalleryController`
+
+or
+
+use this trait in your **gallery admin controller**: `Func\EasyAdminGalleryBundle\Controller\Traits\ListMosaic`
 
 #### 2.1. mosaic view
 
@@ -71,6 +75,13 @@ easy_admin:
 ready to mosaic listing.
 
 #### 2.2. drag and drop upload
+
+set your gallery entitiy controller as `Func\EasyAdminGalleryBundle\Controller\GalleryController`
+
+or
+
+use this trait in your **gallery admin controller**: `Func\EasyAdminGalleryBundle\Controller\Traits\DragDrop`
+
 
 ```yml
 easy_admin:
